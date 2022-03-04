@@ -58,6 +58,7 @@ const checkboxToggleAll = document.querySelector('input[type=checkbox][data-type
 const checkboxesTableItems = document.querySelectorAll('input[type=checkbox][data-type=tableItem]');
 checkboxToggleAll.addEventListener('input', (e) => {
   checkboxesTableItems.forEach((item) => {
-    item.checked = e.target.checked;
+    const checkbox = item;
+    checkbox.checked = e.target.checked;
   });
 });
