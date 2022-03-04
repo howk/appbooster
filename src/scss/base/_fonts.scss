@@ -1,0 +1,18 @@
+@font-face {
+	font-family: 'Harmonia Sans';
+	src: local('Harmonia Sans Regular'), local('Harmonia-Sans-Regular'),
+		url('../fonts/HarmoniaSansProCyr-Regular.woff2') format('woff2'),
+		url('../fonts/HarmoniaSansProCyr-Regular.woff') format('woff'),
+		url('../fonts/HarmoniaSansProCyr-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'Harmonia Sans';
+    src: local('Harmonia Sans Semi Bold'), local('Harmonia-Sans-Semi-Bold'),
+        url('../fonts/HarmoniaSansProCyr-SemiBd.woff2') format('woff2'),
+        url('../fonts/HarmoniaSansProCyr-SemiBd.woff') format('woff'),
+        url('../fonts/HarmoniaSansProCyr-SemiBd.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
