@@ -1,6 +1,21 @@
 import '../scss/app.scss';
 
 // Handle table row toggling
+const btnGroupButtons = document.querySelectorAll('.btn-group__button');
+btnGroupButtons.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('btn-group__button_active')) {
+      const parent = e.target.closest('.btn-group');
+      const siblings = parent.querySelectorAll('.btn-group__button');
+      siblings.forEach((btn) => {
+        btn.classList.remove('btn-group__button_active');
+      });
+      e.target.classList.add('btn-group__button_active');
+    }
+  });
+});
+
+// Handle table row toggling
 const nameItems = document.querySelectorAll('.table-data__row-body_expandable .table-data__cell-name');
 nameItems.forEach((item) => {
   item.addEventListener('click', (e) => {
