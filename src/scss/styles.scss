@@ -12,6 +12,7 @@ button {
   display: flex;
   justify-content: flex-start;
   margin-left: 20px;
+  min-height: 40px;
   &__button {
     border: 1px #eeeff1 solid;
     background: none;
@@ -40,6 +41,21 @@ button {
     border-bottom-right-radius: 5px;
   } 
 }
+@media (max-width: 600px) {
+  .btn-group {
+    margin-left: 0;
+    width: 100%;
+    &__button {
+      width: 50%;
+    }
+    &__button:first-child {
+      margin-left: 0;
+    }
+    &__button:last-child {
+      width: calc(50% + 1px);
+    } 
+  }
+}  
 
 .btn {
 	min-height: 40px;
@@ -95,6 +111,11 @@ button {
 	margin-right: auto;
 	padding: 20px;
 }
+@media (max-width: 1000px) {
+  .main-wrapper {
+    padding: 0;
+  }
+}  
 
 .block {
   border: 1px solid rgba(17, 34, 62, 0.05);
@@ -104,7 +125,12 @@ button {
 
 @media (max-width: 1200px) {
   .block {
-      padding: 20px;
+    padding: 20px;
+  }
+}
+@media (max-width: 1000px) {
+  .block {
+    border: none;
   }
 }
 
@@ -149,6 +175,45 @@ button {
     }    
   }  
 }
+@media (max-width: 860px) {
+  .toolbar {
+    flex-wrap: wrap;
+    &__search {
+      flex-grow: 1;
+      flex-shrink: 1;
+    }    
+    &__left {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    &__right {
+      width: 100%;
+      justify-content: center;
+      .btn + .btn {
+        margin-left: 0;
+        margin-top: 15px;
+      }         
+    }       
+  }
+}
+@media (max-width: 600px) {
+  .toolbar {
+    &__left {
+      flex-wrap: wrap;
+    }
+    &__search {
+      width: 100%;
+      margin-bottom: 15px;
+    }     
+  }
+}
+@media (max-width: 400px) {
+  .toolbar {
+    &__right {
+      flex-direction: column;
+    }
+  }
+} 
 
 .notification {
   background-color: rgba(248, 231, 28, 0.15);
@@ -352,6 +417,13 @@ button {
         padding-bottom: 20px;
         width: 100%;        
       }
+      @media (max-width: 1000px) {
+        .table-data__fixed__inner {
+          padding-left: 40px;
+          padding-top: 15px;
+          padding-bottom: 15px;      
+        }
+      }       
       .table-data__cell-data {
         border: none;
         padding: 14px 5px;
@@ -398,6 +470,21 @@ button {
       align-items: stretch;
     }    
   }
+  @media (max-width: 800px) {
+    &__fixed {
+      width: 45%;
+      min-width: 280px;
+    }
+    
+    &__cells {
+      width: 55%;   
+    }
+  }
+  @media (max-width: 768px) {
+    &__fixed {
+      position: relative;
+    }
+  }    
 
   &__cell-data {
     width: calc(100% / 14);
@@ -412,7 +499,25 @@ button {
     &_highlighted-negative {
       background-color: #FFF6F6;
     }    
-  }  
+  }
+  @media (max-width: 1000px) {
+    &__cell-data {
+      width: calc(100% / 12);
+      min-width: calc(100% / 12); 
+    }
+  }   
+  @media (max-width: 800px) {
+    &__cell-data {
+      width: calc(100% / 10);
+      min-width: calc(100% / 10); 
+    }
+  }
+  @media (max-width: 768px) {
+    &__cell-data {
+      width: calc(100% / 8);
+      min-width: 40px; 
+    }
+  }   
 
   &__cell-checkbox {
     padding: 10px 14px;
@@ -420,6 +525,11 @@ button {
     justify-content: center;
     align-items: center;
   }
+  @media (max-width: 1000px) {
+    &__cell-checkbox {
+      padding: 10px 10px;
+    }
+  }   
   
   &__cell-toolbar {
     padding-left: 5px;
@@ -454,6 +564,11 @@ button {
       }
     }    
   }
+  @media (max-width: 1000px) {
+    &__cell-toolbar {
+      padding-left: 0;
+    }
+  }      
   
   &__cell-frequency {
     display: flex;
@@ -463,6 +578,8 @@ button {
     width: 90px;
     padding-left: 15px;
     padding-right: 15px;
+    flex-shrink: 0;
+    flex-grow: 0;
     &__label {
       display: block;
       font-size: 12px;
@@ -475,7 +592,14 @@ button {
       display: flex;
       align-items: center;
     }    
-  } 
+  }
+  @media (max-width: 1000px) {
+    &__cell-frequency {
+      width: 70px;
+      padding-left: 5px;
+      padding-right: 5px; 
+    }
+  }  
   
   &__cell-name {
     display: flex;
@@ -497,6 +621,12 @@ button {
       align-items: center;
       justify-content: flex-start; 
     }
+    @media (max-width: 1000px) {
+      &__value {
+        padding-right: 38px;
+        padding-left: 0;
+      }
+    }    
     .table-data__row-body_expandable &__value {
       cursor: pointer;
       &::after {
@@ -510,6 +640,11 @@ button {
         transform: translateY(-50%);
         right: 20px;        
       }
+      @media (max-width: 1000px) {
+        &::after {
+          right: 5px;        
+        }
+      }       
     }
     .table-data__row-body_expandable.table-data__row-body_opened &__value {
       &::after {
@@ -684,3 +819,8 @@ button {
     fill: #f5a623;    
   }
 }
+@media (max-width: 1000px) {
+  .button-favorite {
+    right: 17px;
+  }
+}  
